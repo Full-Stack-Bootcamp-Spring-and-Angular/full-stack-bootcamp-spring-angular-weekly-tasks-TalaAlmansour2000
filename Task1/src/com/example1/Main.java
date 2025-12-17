@@ -9,11 +9,8 @@ public class Main {
 
         Shape circle = context.getBean("circle", Shape.class);
         Shape square = context.getBean("square", Shape.class);
-
-
-        System.out.println("the area of the circle = " + circle.getArea());
-        System.out.println("the area of the Square = " + square.getArea());
-
+        System.out.println(String.format("the area of the circle = %f", circle.getArea()));
+        System.out.println(String.format("the area of the Square = %f", square.getArea()));
 
         context.close();
     }
