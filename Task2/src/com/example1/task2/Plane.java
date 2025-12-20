@@ -7,6 +7,7 @@ public class Plane implements  Vehicle{
     public Plane(DatabaseOperations databaseOperations) {
         this.databaseOperations = databaseOperations;
     }
+    @Override
     public void setBrand(String brand) {
         this.brand = brand;
     }

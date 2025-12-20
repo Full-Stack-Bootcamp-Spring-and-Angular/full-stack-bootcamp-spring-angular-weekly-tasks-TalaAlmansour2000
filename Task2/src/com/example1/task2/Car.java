@@ -8,7 +8,7 @@ public class Car implements Vehicle {
     public void setDatabaseOperations(DatabaseOperations databaseOperations) {
         this.databaseOperations = databaseOperations;
     }
-
+    @Override
     public void setBrand(String brand) {
         this.brand = brand;
     }
