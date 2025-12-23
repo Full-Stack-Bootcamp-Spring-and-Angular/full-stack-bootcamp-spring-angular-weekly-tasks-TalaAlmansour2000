@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="draw2D" class="com.example.task1.Draw2D"/>
+    <bean id="draw3D" class="com.example.task1.Draw3D"/>
+
+
+    <bean id="circle" class="com.example.task1.Circle" scope="singleton">
+        <constructor-arg ref="draw2D"/>
+        <property name="draw3D" ref="draw3D"/>
+    </bean>
+
+
+    <bean id="square" class="com.example.task1.Square" scope="prototype">
+        <property name="draw2D" ref="draw2D"/>
+        <property name="draw3D" ref="draw3D"/>
+    </bean>
+
+</beans>
