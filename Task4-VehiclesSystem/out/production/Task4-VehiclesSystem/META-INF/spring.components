@@ -1,0 +1,8 @@
+com.vehiclesSystem.config.Config=org.springframework.stereotype.Component
+com.vehiclesSystem.controller.BikeController=org.springframework.stereotype.Component
+com.vehiclesSystem.controller.CarController=org.springframework.stereotype.Component
+com.vehiclesSystem.controller.PlaneController=org.springframework.stereotype.Component
+com.vehiclesSystem.dao.DatabaseOperations=org.springframework.stereotype.Component
+com.vehiclesSystem.models.Bike=org.springframework.stereotype.Component
+com.vehiclesSystem.models.Car=org.springframework.stereotype.Component
+com.vehiclesSystem.models.Plane=org.springframework.stereotype.Component
