@@ -117,40 +117,18 @@ public class DatabaseOperations {
     }
 
     public void getAllVehicles() {
-        if (this.connection != null) {
+
             String sql = "SELECT * FROM vehicles";
 
             try (Statement stmt = this.connection.createStatement()) {
                 ResultSet rs = stmt.executeQuery(sql);
-                Throwable var5 = null;
 
-                try {
-                    System.out.println(" Current Database Content:");
 
                     while(rs.next()) {
-                        System.out.println(String.format("ID: %d | Model: %s | Type: %s", rs.getInt("id"), rs.getString("model"), rs.getString("type")));
-                    }
-                } catch (Throwable var30) {
-                    var5 = var30;
-                    throw var30;
-                } finally {
-                    if (rs != null) {
-                        if (var5 != null) {
-                            try {
-                                rs.close();
-                            } catch (Throwable var29) {
-                                var5.addSuppressed(var29);
-                            }
-                        } else {
-                            rs.close();
-                        }
-                    }
-
-                }
+                        System.out.println(String.format("ID: %d | Model: %s | Type: %s", rs.getInt("id"), rs.getString("model"), rs.getString("type")));}
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
         }
     }
-}
