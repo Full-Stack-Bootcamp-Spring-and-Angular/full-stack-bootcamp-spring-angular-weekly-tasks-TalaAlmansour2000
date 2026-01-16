@@ -1,0 +1,17 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+/out/
+*.class
+.idea/
+*.iml
+*.jar
+out/
+bin/
+libs/
+libraries/
+
+.vscode/
+.settings/
+.classpath
+.project
