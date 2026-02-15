@@ -20,18 +20,18 @@ public class Age {
     @RequestMapping("/calculateAge")
     public String calculateAge(@RequestParam("day") int day,@RequestParam("month") int month,@RequestParam("year") int year, Model model)
 
-
     {
 
-        LocalDate birthDate = LocalDate.of(year, month, day);
-        LocalDate today = LocalDate.now();
-
-        java.time.Period period = java.time.Period.between(birthDate, today);
-        int age = period.getYears();
+        int age = computeAge(year, month, day);
 
         model.addAttribute("userAge" ,age);
 
  return "ageCalculator/Age_Result";
-    }}
-
-
+    }
+    private int computeAge(int year,int month,int day){
+        LocalDate birthDate = LocalDate.of(year, month, day);
+        LocalDate today = LocalDate.now();
+        java.time.Period period = java.time.Period.between(birthDate, today);
+        return period.getYears();
+    }
+}

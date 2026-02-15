@@ -11,7 +11,7 @@
 
     <form action="${pageContext.request.contextPath}/success" method="post">
         <div class="mb-3">
-            <label class="form-label">firstt Name</label>
+            <label class="form-label">first Name</label>
             <input type="text" name="firstName" class="form-control" required>
         </div>
 
