@@ -5,20 +5,6 @@
 <head>
     <title>Success</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-
-        .error {
-            color: #ff0000 !important;
-
-            display: block;
-            margin-top: 5px;
-            font-weight: bold;
-        }
-
-        body { background-color: #f8f9fa; padding-top: 50px; }
-        .card { border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .form-label { font-weight: 500; }
-    </style>
 </head>
 <body>
 

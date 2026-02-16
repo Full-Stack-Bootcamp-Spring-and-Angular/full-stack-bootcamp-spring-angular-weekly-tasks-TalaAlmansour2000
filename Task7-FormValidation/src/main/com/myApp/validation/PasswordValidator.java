@@ -11,10 +11,16 @@ public class PasswordValidator
 
     @Override
     public boolean isValid(Employee emp, ConstraintValidatorContext context) {
-        if (emp.getPassword() == null || emp.getRepassword() == null) {
+        if (emp.getPassword() == null || emp.getConfirmedPassword() == null) {
             return true;
         }
+        boolean isValid = emp.getPassword().equals(emp.getConfirmedPassword());
 
-        return emp.getPassword().equals(emp.getRepassword());
-    }
-}
+        if (!isValid) {
+            context.disableDefaultConstraintViolation();
+            context.buildConstraintViolationWithTemplate("Password do not match")
+                    .addPropertyNode("confirmedPassword")
+                    .addConstraintViolation();
+        }
+        return isValid;
+    }}

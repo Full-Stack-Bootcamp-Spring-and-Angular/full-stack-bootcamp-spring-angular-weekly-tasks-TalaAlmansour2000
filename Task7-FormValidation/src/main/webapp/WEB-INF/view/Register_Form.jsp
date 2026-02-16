@@ -6,20 +6,7 @@
     <meta charset="UTF-8">
     <title>Employee Registration Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-
-            .error {
-                color: #ff0000 !important;
-
-                display: block;
-                margin-top: 5px;
-                font-weight: bold;
-            }
-
-            body { background-color: #f8f9fa; padding-top: 50px; }
-            .card { border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-            .form-label { font-weight: 500; }
-        </style>
+<link href="${pageContext.request.contextPath}/resources/css/style.css?v=1.1" rel="stylesheet">
 </head>
 <body>
 
@@ -40,9 +27,12 @@
      <form:password path="password" class="form-control" placeholder="*******"/>
      <form:errors path="password" cssClass="error"/></div>
 
-<div class="mb-3"><label class="form-label">Confirm Password</label>
-     <form:password path="repassword" class="form-control" placeholder="*****"/>
-     <form:errors path="" cssClass="error"/></div>
+<div class="mb-3">
+    <label class="form-label">Confirm Password</label>
+    <form:password path="confirmedPassword" class="form-control" placeholder="*****"/>
+    <form:errors path="confirmedPassword" cssClass="error"/>
+</div>
+
 
     <button type="submit" class="btn btn-primary w-100">Submit</button>
 
