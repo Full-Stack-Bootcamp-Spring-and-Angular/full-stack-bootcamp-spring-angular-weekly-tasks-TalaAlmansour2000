@@ -22,7 +22,7 @@ public class Employee {
     @NotBlank(message = "this field cannot be empty")
     @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z.-]+\\.[a-zA-Z]{2,}$", message = "please enter a valid  adress")
     private String email;
-    @NotNull(message = "password is required")
+    @NotBlank(message = "Password is required")
     private String password;
     private String confirmedPassword;
 }
