@@ -16,7 +16,7 @@ public class Transcript {
     private double gpa;
 
     private String year;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "student_id", unique = true)
     private Student student;
 
