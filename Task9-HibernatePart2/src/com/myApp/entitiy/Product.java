@@ -2,6 +2,7 @@ package com.myApp.entitiy;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 @Setter
 @Entity
 @Table(name = "products")
+@ToString
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,17 +47,4 @@ public class Product {
     }
 
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' + // أضفناه هنا
-                ", price=" + price +
-                ", stockQuantity=" + stockQuantity +
-                ", manufacturer='" + manufacturer + '\'' +
-                ", productionDate=" + productionDate +
-                ", totalInventoryValue=" + getTotalValue() +
-                '}';
-    }
 }
