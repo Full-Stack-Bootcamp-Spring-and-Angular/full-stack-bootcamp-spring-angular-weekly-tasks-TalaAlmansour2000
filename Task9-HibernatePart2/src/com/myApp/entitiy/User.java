@@ -2,12 +2,15 @@ package com.myApp.entitiy;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "user")
+@ToString(exclude = "password")
 public class User {
 
     @Id
@@ -24,12 +27,4 @@ public class User {
 
     public User() {}
 
-    @Override
-    public String toString() {
-        return "User{" +
-                ", password='****'" + '\'' +
-                ", username='" + username + '\'' +
-                ", id=" + id +
-                '}';
-    }
 }
