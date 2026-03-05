@@ -2,6 +2,7 @@ package com.myApp.entitiy;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ import java.time.Period;
 @Setter
 @Entity
 @Table(name = "student")
+@ToString(exclude = "transcript")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +35,7 @@ public class Student {
     @Min(0)
     private double fees;
 
-    @OneToOne(mappedBy = "student")
+    @OneToOne(mappedBy = "student",cascade = CascadeType.ALL)
     private Transcript transcript;
 
     public Student() {}
@@ -51,15 +53,4 @@ public class Student {
         return Period.between(birthDate, LocalDate.now()).getYears();
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", birthDate=" + birthDate +
-                ", registrationDate=" + registrationDate +
-                ", fees=" + fees +
-                '}';
-    }
 }

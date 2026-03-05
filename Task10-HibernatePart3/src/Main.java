@@ -32,10 +32,10 @@ public class Main {
             );
 
             Transcript transcript = new Transcript(student, 3.6, "2024");
+            student.setTranscript(transcript);
 
 
             session.save(student);
-            session.save(transcript);
 
             session.getTransaction().commit();
 
