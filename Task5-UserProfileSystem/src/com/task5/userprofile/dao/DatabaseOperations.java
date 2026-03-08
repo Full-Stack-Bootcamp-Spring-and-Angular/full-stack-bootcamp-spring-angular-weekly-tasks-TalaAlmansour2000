@@ -1,7 +1,6 @@
 package com.task5.userprofile.dao;
 
 import com.task5.userprofile.models.User;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
@@ -14,8 +13,6 @@ import java.sql.*;
 @Component
 @Scope("singleton")
 public class DatabaseOperations {
-
-
 
     @Value("${db.url}")
     private String url;
